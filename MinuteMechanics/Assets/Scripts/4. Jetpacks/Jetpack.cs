@@ -1,0 +1,86 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public enum SideRL
+{
+    Right=0,
+    Left,
+}
+
+public class Jetpack : MonoBehaviour
+{
+    private Gamepad controller = null;
+    private Transform m_transform;
+
+    public float maxFuel = 4f;
+    public float thrustForce = 0.5f;
+    public Rigidbody rigid;
+    public Transform groundedTransform;
+    public ParticleSystem effect;
+
+    private float curFuel;
+    public SideRL side;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        curFuel = maxFuel;
+        this.controller = InputTest.m_Instance.controller;
+        m_transform = this.transform;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //if (Input.GetAxis(axisName) > 0f && curFuel > 0f)
+        //{
+        //    curFuel -= Time.deltaTime;
+        //    rigid.AddForce(rigid.transform.up * thrustForce, ForceMode.Impulse);
+        //    effect.Play();
+        //}
+        //else if (Physics.Raycast(groundedTransform.position, Vector3.down, 0.05f, LayerMask.GetMask("Grounded")) && curFuel < maxFuel)
+        //{
+        //    curFuel += Time.deltaTime;
+        //    effect.Stop();
+        //}
+        //else
+        //{
+        //    effect.Stop();
+        //}
+
+        var gamepad = Gamepad.current;
+        if (gamepad == null)
+            return; // No gamepad connected.
+
+
+        if (side == SideRL.Right && gamepad.rightTrigger.wasPressedThisFrame)
+        {
+            // 'Use' code here
+            curFuel -= Time.deltaTime;
+            rigid.AddForce(rigid.transform.up * thrustForce, ForceMode.Impulse);
+            effect.Play();
+
+        }
+        else if (side == SideRL.Left && gamepad.leftTrigger.wasPressedThisFrame)
+        {
+            // 'Use' code here
+            curFuel -= Time.deltaTime;
+            rigid.AddForce(rigid.transform.up * thrustForce, ForceMode.Impulse);
+            effect.Play();
+        }
+        else if (Physics.Raycast(groundedTransform.position, Vector3.down, 0.05f, LayerMask.GetMask("Grounded")) && curFuel < maxFuel)
+        {
+            curFuel += Time.deltaTime;
+            effect.Stop();
+        }
+        else
+        {
+            effect.Stop();
+        }
+
+        Vector2 move = gamepad.leftStick.ReadValue();
+        //'Move' code here
+    }
+}
