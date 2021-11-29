@@ -37,21 +37,6 @@ public class Jetpack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetAxis(axisName) > 0f && curFuel > 0f)
-        //{
-        //    curFuel -= Time.deltaTime;
-        //    rigid.AddForce(rigid.transform.up * thrustForce, ForceMode.Impulse);
-        //    effect.Play();
-        //}
-        //else if (Physics.Raycast(groundedTransform.position, Vector3.down, 0.05f, LayerMask.GetMask("Grounded")) && curFuel < maxFuel)
-        //{
-        //    curFuel += Time.deltaTime;
-        //    effect.Stop();
-        //}
-        //else
-        //{
-        //    effect.Stop();
-        //}
 
         var gamepad = Gamepad.current;
         if (gamepad == null)

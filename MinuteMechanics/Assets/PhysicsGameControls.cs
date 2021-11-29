@@ -28,7 +28,7 @@ public class @PhysicsGameControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""CamRotate"",
-                    ""type"": ""Value"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""284b940d-aaac-429f-be6f-a9ed4b287a70"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",

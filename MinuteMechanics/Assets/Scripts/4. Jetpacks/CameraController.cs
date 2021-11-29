@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// no use 
+// use cinemachine instead
 public class CameraController : MonoBehaviour
 {
     public bool Lookat;
