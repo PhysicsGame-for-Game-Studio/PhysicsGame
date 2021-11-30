@@ -39,7 +39,7 @@ public class @PhysicsGameControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""194d9415-93ea-49fd-9a0f-ef300a71b19e"",
-                    ""path"": ""<Gamepad>/rightStick"",
+                    ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""PS4 Controller"",
@@ -49,8 +49,8 @@ public class @PhysicsGameControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""e7db59f0-6697-455f-a639-ffdc02859c2a"",
-                    ""path"": ""<Gamepad>/leftStick"",
+                    ""id"": ""43d0ef27-10d8-4ba6-88f3-32934e8ab9d6"",
+                    ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""PS4 Controller"",

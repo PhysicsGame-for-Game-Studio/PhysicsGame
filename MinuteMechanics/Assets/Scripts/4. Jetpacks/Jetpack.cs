@@ -21,7 +21,7 @@ public class Jetpack : MonoBehaviour
     public ParticleSystem effect;
 
     private bool isGrounded = false;
-    public float gravity = -9.81f;
+
 
     private float curFuel;
     public SideRL side;
@@ -44,7 +44,7 @@ public class Jetpack : MonoBehaviour
 
         rigid.freezeRotation = true;
 
-
+        thrustForce = 2.0f + ((10.0f - curFuel) * 0.9f);
 
         if (side == SideRL.Right && gamepad.rightTrigger.wasPressedThisFrame)
         {
@@ -71,8 +71,13 @@ public class Jetpack : MonoBehaviour
             effect.Stop();
         }
 
-        Vector2 move = gamepad.leftStick.ReadValue();
+        //Vector2 move = gamepad.leftStick.ReadValue();
         //'Move' code here
+    }
+
+    public float GetFuel()
+    {
+        return curFuel;
     }
 
 
