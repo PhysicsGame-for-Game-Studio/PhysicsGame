@@ -42,6 +42,14 @@ public class DS4
         return Quaternion.Euler(0, y, z);
     }
 
+    public static Quaternion getXYZRotation(float scale = 1)
+    {
+        float x = processRawData(gyroX.ReadValue()) * scale;
+        float y = processRawData(gyroY.ReadValue()) * scale;
+        float z = -processRawData(gyroZ.ReadValue()) * scale;
+        return Quaternion.Euler(x, y, z);
+    }
+
     private static float processRawData(float data)
     {
         return data > 0.5 ? 1 - data : -data;

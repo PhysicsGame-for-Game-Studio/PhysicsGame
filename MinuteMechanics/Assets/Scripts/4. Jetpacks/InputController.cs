@@ -39,7 +39,7 @@ public class InputController : MonoBehaviour
             {
                 m_transform.rotation = Quaternion.identity;
             }
-            m_transform.rotation *= DS4.getYZRotation(m_Sansitivity * Time.deltaTime);
+            m_transform.rotation *= DS4.getXYZRotation(m_Sansitivity * Time.deltaTime);
 
             // Test button pressed
             if (Gamepad.current.aButton.wasPressedThisFrame)

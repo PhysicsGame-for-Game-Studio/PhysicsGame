@@ -52,7 +52,7 @@ public class Jetpack : MonoBehaviour
             curFuel -= Time.deltaTime;
             rigid.AddForce(rigid.transform.up * thrustForce, ForceMode.Impulse);
             effect.Play();
-
+            // Debug.Log("UP: " + rigid.transform.up);
         }
         else if (side == SideRL.Left && gamepad.leftTrigger.wasPressedThisFrame)
         {
@@ -60,6 +60,7 @@ public class Jetpack : MonoBehaviour
             curFuel -= Time.deltaTime;
             rigid.AddForce(rigid.transform.up * thrustForce, ForceMode.Impulse);
             effect.Play();
+            
         }
         else if (Physics.Raycast(groundedTransform.position, Vector3.down, 0.05f, LayerMask.GetMask("Grounded")) && curFuel < maxFuel)
         {
