@@ -1110,7 +1110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70319bbe0d2204744bc04c3b28bd1d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 80
+  strength: 100
   direction: {x: 0, y: 1, z: 0}
 --- !u!65 &95060027
 BoxCollider:
@@ -23397,7 +23397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70319bbe0d2204744bc04c3b28bd1d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 50
+  strength: 88
   direction: {x: 5, y: 0, z: 0}
 --- !u!1001 &675150060
 PrefabInstance:
@@ -28270,7 +28270,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081370219}
-  m_LocalRotation: {x: 0.16695613, y: 0.029509041, z: -0.018001888, w: 0.98535824}
+  m_LocalRotation: {x: 0.16695613, y: 0.02950901, z: -0.01800187, w: 0.98535824}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -31684,7 +31684,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24808
+  m_Name: pb_Mesh24814
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
