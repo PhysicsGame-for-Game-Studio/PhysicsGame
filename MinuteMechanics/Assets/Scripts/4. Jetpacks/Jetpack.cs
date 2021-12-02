@@ -21,7 +21,7 @@ public class Jetpack : MonoBehaviour
     public ParticleSystem effect;
 
     private bool isGrounded = false;
-
+    Vector3 m_NewForce;
 
     private float curFuel;
     public SideRL side;
@@ -32,6 +32,7 @@ public class Jetpack : MonoBehaviour
         curFuel = maxFuel;
         this.controller = InputController.m_Instance.controller;
         m_transform = this.transform;
+        m_NewForce = new Vector3(-5.0f, 1.0f, 0.0f);
     }
 
     // Update is called once per frame
@@ -44,13 +45,13 @@ public class Jetpack : MonoBehaviour
 
         rigid.freezeRotation = true;
 
-        thrustForce = 2.0f + ((10.0f - curFuel) * 0.9f);
+ 
 
         if (side == SideRL.Right && gamepad.rightTrigger.wasPressedThisFrame)
         {
             // 'Use' code here
             curFuel -= Time.deltaTime;
-            rigid.AddForce(rigid.transform.up * thrustForce, ForceMode.Impulse);
+            rigid.AddForce(transform.up * thrustForce, ForceMode.Impulse);
             effect.Play();
             // Debug.Log("UP: " + rigid.transform.up);
         }
@@ -58,7 +59,8 @@ public class Jetpack : MonoBehaviour
         {
             // 'Use' code here
             curFuel -= Time.deltaTime;
-            rigid.AddForce(rigid.transform.up * thrustForce, ForceMode.Impulse);
+            
+            rigid.AddForce(transform.up * thrustForce, ForceMode.Impulse);
             effect.Play();
             
         }
