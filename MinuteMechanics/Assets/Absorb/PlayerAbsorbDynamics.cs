@@ -15,7 +15,7 @@ public class PlayerAbsorbDynamics : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         main = rainParticle.main;
 
-
+        
     }
 
     // Update is called once per frame
