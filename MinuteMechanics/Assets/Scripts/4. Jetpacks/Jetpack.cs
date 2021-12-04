@@ -53,7 +53,7 @@ public class Jetpack : MonoBehaviour
             curFuel -= Time.deltaTime;
             rigid.AddForce(transform.up * thrustForce, ForceMode.Impulse);
             effect.Play();
-            // Debug.Log("UP: " + rigid.transform.up);
+             Debug.Log("UP: " + transform.up);
         }
         else if (side == SideRL.Left && gamepad.leftTrigger.wasPressedThisFrame)
         {

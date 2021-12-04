@@ -48,12 +48,12 @@ public class PlayerController : MonoBehaviour
     {
         float vz = playerRB.velocity.y;
         float gravity = GameManager.m_Instance.gravity;
-        Vector3 m = new Vector3(moveVal.x * 5, vz+ gravity * Time.deltaTime, moveVal.y * 5);
-        playerRB.velocity = m;
+        //Vector3 m = new Vector3(moveVal.x * 5, vz+ gravity * Time.deltaTime, moveVal.y * 5);
+        //playerRB.velocity = m;
 
-        //playerCamera.GetComponent<Transform>().Rotate(Vector3.up * rotVal.x * .2f);       // ·Ç Cinemachine
+        ////playerCamera.GetComponent<Transform>().Rotate(Vector3.up * rotVal.x * .2f);       // ·Ç Cinemachine
 
-        transform.Translate(new Vector3(moveVal.x, moveVal.y, 0) * moveSpeed * Time.deltaTime);
+        //transform.Translate(new Vector3(moveVal.x, moveVal.y, 0) * moveSpeed * Time.deltaTime);
 
         if (inWindZone)
         {
