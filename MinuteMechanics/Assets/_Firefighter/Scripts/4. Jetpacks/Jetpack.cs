@@ -14,7 +14,7 @@ public class Jetpack : MonoBehaviour
     private Gamepad controller = null;
     private Transform m_transform;
 
-    public float maxFuel = 4f;
+
     public float thrustForce = 0.5f;
     public Rigidbody rigid; // player rigid
     public Transform groundedTransform;
@@ -24,12 +24,14 @@ public class Jetpack : MonoBehaviour
     Vector3 m_NewForce;
 
     private float curFuel;
+    private float maxFuel;
     public SideRL side;
 
     // Start is called before the first frame update
     void Start()
     {
-        curFuel = maxFuel;
+        curFuel = maxFuel = GameManager.m_Instance.maxFuel;
+       
         this.controller = InputController.m_Instance.controller;
         m_transform = this.transform;
         m_NewForce = new Vector3(-5.0f, 1.0f, 0.0f);
@@ -45,12 +47,10 @@ public class Jetpack : MonoBehaviour
 
         rigid.freezeRotation = true;
 
- 
-
         if (side == SideRL.Right && gamepad.rightTrigger.wasPressedThisFrame)
         {
             // 'Use' code here
-            curFuel -= Time.deltaTime;
+            GameManager.m_Instance.ComputeFuel(FuelMode.defaultJet);
             rigid.AddForce(transform.up * thrustForce, ForceMode.Impulse);
             effect.Play();
              Debug.Log("UP: " + transform.up);
@@ -58,15 +58,15 @@ public class Jetpack : MonoBehaviour
         else if (side == SideRL.Left && gamepad.leftTrigger.wasPressedThisFrame)
         {
             // 'Use' code here
-            curFuel -= Time.deltaTime;
-            
+            GameManager.m_Instance.ComputeFuel(FuelMode.defaultJet);
+
             rigid.AddForce(transform.up * thrustForce, ForceMode.Impulse);
             effect.Play();
             
         }
         else if (Physics.Raycast(groundedTransform.position, Vector3.down, 0.05f, LayerMask.GetMask("Grounded")) && curFuel < maxFuel)
         {
-            curFuel += Time.deltaTime;
+            GameManager.m_Instance.ComputeFuel(FuelMode.defaultRefill);
             effect.Stop();
         }
         else
