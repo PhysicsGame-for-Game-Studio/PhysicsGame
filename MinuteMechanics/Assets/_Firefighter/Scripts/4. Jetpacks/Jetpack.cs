@@ -19,6 +19,7 @@ public class Jetpack : MonoBehaviour
     public Rigidbody rigid; // player rigid
     public Transform groundedTransform;
     public ParticleSystem effect;
+    public ParticleSystem effectBoost;
 
     private bool isGrounded = false;
     Vector3 m_NewForce;
@@ -26,6 +27,7 @@ public class Jetpack : MonoBehaviour
     private float curFuel;
     private float maxFuel;
     public SideRL side;
+    private bool isBoost;   // 加速模式
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +37,27 @@ public class Jetpack : MonoBehaviour
         this.controller = InputController.m_Instance.controller;
         m_transform = this.transform;
         m_NewForce = new Vector3(-5.0f, 1.0f, 0.0f);
+
+        isBoost = false;
+    }
+
+    public void PlayEffect(bool boostMode = false)
+    {
+        if (boostMode)
+        {
+            effectBoost.Play();
+        }
+        else
+        {
+            effect.Play();
+        }
+    }
+
+    public void StopEffect()
+    {
+        effectBoost.Stop();
+        effect.Stop();
+        Debug.Log("effect stop.");
     }
 
     // Update is called once per frame
@@ -47,26 +70,31 @@ public class Jetpack : MonoBehaviour
 
         rigid.freezeRotation = true;
 
-        if (side == SideRL.Right && gamepad.rightTrigger.wasPressedThisFrame)
+        if (gamepad.rightTrigger.wasPressedThisFrame)
         {
             // 'Use' code here
             GameManager.m_Instance.ComputeFuel(FuelMode.defaultJet);
             rigid.AddForce(transform.up * thrustForce, ForceMode.Impulse);
-            effect.Play();
+
+            isBoost = false;
+            PlayEffect(isBoost);
              Debug.Log("UP: " + transform.up);
         }
-        else if (side == SideRL.Left && gamepad.leftTrigger.wasPressedThisFrame)
+        else if (gamepad.leftTrigger.wasPressedThisFrame)
         {
             // 'Use' code here
             GameManager.m_Instance.ComputeFuel(FuelMode.defaultJet);
 
             rigid.AddForce(transform.up * thrustForce, ForceMode.Impulse);
-            effect.Play();
-            
+
+            isBoost = true;
+            PlayEffect(isBoost);
+
         }
         else if (Physics.Raycast(groundedTransform.position, Vector3.down, 0.05f, LayerMask.GetMask("Grounded")) && curFuel < maxFuel)
         {
             GameManager.m_Instance.ComputeFuel(FuelMode.defaultRefill);
+            isBoost = false;
             effect.Stop();
         }
         else

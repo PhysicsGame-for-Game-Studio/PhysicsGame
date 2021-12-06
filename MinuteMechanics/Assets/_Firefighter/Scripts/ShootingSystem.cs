@@ -35,7 +35,7 @@ public class ShootingSystem : MonoBehaviour
 
         if (gamepad.leftTrigger.wasPressedThisFrame)
         {
-            VisualPolish();
+            //VisualPolish();
             //input.RotateToCamera(transform);
         }
 
