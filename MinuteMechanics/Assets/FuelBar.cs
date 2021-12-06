@@ -12,6 +12,8 @@ public class FuelBar : MonoBehaviour
     public Image fuelBar;
 
     float curFuel, maxFuel;
+    [SerializeField]
+    private float lerpSpeed;
 
     private void Start()
     {
@@ -24,11 +26,17 @@ public class FuelBar : MonoBehaviour
         curFuel = GameManager.m_Instance.curFuel;
         fuelText.text = curFuel.ToString();
         FuelBarFiller();
+        ColorChanger();
     }
 
     void FuelBarFiller()
     {
-        fuelBar.fillAmount = curFuel / maxFuel;
+        fuelBar.fillAmount =Mathf.Lerp(fuelBar.fillAmount, curFuel / maxFuel, lerpSpeed);
+    }
+
+    void ColorChanger()
+    {
+
     }
 
 }
