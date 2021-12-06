@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
         //controls.PlayerMovement.Pitch.canceled += cntxt => moveVal = Vector2.zero;
 
         //controls.PlayerMovement.CamRotate.performed += cntxt => rotVal = cntxt.ReadValue<Vector2>();
-        //controls.PlayerMovement.CamRotate.canceled += cntxt => rotVal = Vector2.zero;       // ·Ç Cinemachine
+        //controls.PlayerMovement.CamRotate.canceled += cntxt => rotVal = Vector2.zero;       // ?? Cinemachine
 
     }
 
@@ -48,12 +48,12 @@ public class PlayerController : MonoBehaviour
     {
         float vz = playerRB.velocity.y;
         float gravity = GameManager.m_Instance.gravity;
-        Vector3 m = new Vector3(moveVal.x * 5, vz+ gravity * Time.deltaTime, moveVal.y * 5);
-        playerRB.velocity = m;
+        //Vector3 m = new Vector3(moveVal.x * 5, vz+ gravity * Time.deltaTime, moveVal.y * 5);
+        //playerRB.velocity = m;
 
-        //playerCamera.GetComponent<Transform>().Rotate(Vector3.up * rotVal.x * .2f);       // ·Ç Cinemachine
+        //playerCamera.GetComponent<Transform>().Rotate(Vector3.up * rotVal.x * .2f);       // ?? Cinemachine
 
-        transform.Translate(new Vector3(moveVal.x, moveVal.y, 0) * moveSpeed * Time.deltaTime);
+        //transform.Translate(new Vector3(moveVal.x, moveVal.y, 0) * moveSpeed * Time.deltaTime);
 
         if (inWindZone)
         {
@@ -61,6 +61,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        var gamepad = Gamepad.current;
+        if (gamepad.rightTrigger.wasPressedThisFrame)
+        {
+            playerRB.AddForce(transform.up * 20f, ForceMode.Impulse);
+        }
+    }
 
     // wind
 

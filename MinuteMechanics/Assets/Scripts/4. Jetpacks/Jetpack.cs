@@ -44,23 +44,24 @@ public class Jetpack : MonoBehaviour
 
         rigid.freezeRotation = true;
 
-        thrustForce = 2.0f + ((10.0f - curFuel) * 0.9f);
+        //thrustForce = 2.0f + ((10.0f - curFuel) * 0.9f);
 
         if (side == SideRL.Right && gamepad.rightTrigger.wasPressedThisFrame)
         {
             // 'Use' code here
             curFuel -= Time.deltaTime;
-            rigid.AddForce(rigid.transform.up * thrustForce, ForceMode.Impulse);
+            //rigid.AddForce(rigid.gameObject.transform.up * thrustForce, ForceMode.Impulse);
             effect.Play();
-            // Debug.Log("UP: " + rigid.transform.up);
+             //Debug.Log("UP: " + transform.up);
+            //Debug.Log("Force: " + rigid.gameObject.transform.up * thrustForce + "; Speed: " + rigid.velocity);
         }
         else if (side == SideRL.Left && gamepad.leftTrigger.wasPressedThisFrame)
         {
             // 'Use' code here
             curFuel -= Time.deltaTime;
-            rigid.AddForce(rigid.transform.up * thrustForce, ForceMode.Impulse);
+            //rigid.AddForce(rigid.gameObject.transform.up * thrustForce, ForceMode.Impulse);
             effect.Play();
-            
+            //Debug.Log("Force: " + rigid.gameObject.transform.up * thrustForce + "; Speed: " + rigid.velocity);
         }
         else if (Physics.Raycast(groundedTransform.position, Vector3.down, 0.05f, LayerMask.GetMask("Grounded")) && curFuel < maxFuel)
         {
