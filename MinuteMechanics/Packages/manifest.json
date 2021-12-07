@@ -1,5 +1,9 @@
 {
   "dependencies": {
+<<<<<<< Updated upstream
+=======
+    "com.unity.2d.psdimporter": "6.0.1",
+>>>>>>> Stashed changes
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.cinemachine": "2.7.9",
     "com.unity.collab-proxy": "1.5.7",

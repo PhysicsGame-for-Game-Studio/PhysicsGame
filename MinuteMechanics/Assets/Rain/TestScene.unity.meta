@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:MinuteMechanics/Assets/Rain/TestScene.unity.meta
 guid: 7fc53cb09b5a840339fbdc7edaafd705
 DefaultImporter:
+=======
+guid: 45298a98893f34cf3bd9b92f23232088
+NativeFormatImporter:
+>>>>>>> Stashed changes:MinuteMechanics/Assets/UniversalRenderPipelineGlobalSettings.asset.meta
   externalObjects: {}
+  mainObjectFileID: 11400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
