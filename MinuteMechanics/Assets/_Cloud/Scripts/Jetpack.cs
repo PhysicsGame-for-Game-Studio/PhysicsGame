@@ -15,7 +15,8 @@ public class Jetpack : MonoBehaviour
     private Transform m_transform;
 
 
-    public float thrustForce = 0.5f;
+    public float thrustForce;
+    public float boostForce;
     public Rigidbody rigid; // player rigid
     public Transform groundedTransform;
     public ParticleSystem effect;
@@ -85,7 +86,7 @@ public class Jetpack : MonoBehaviour
             // 'Use' code here
             GameManager.m_Instance.ComputeFuel(FuelMode.defaultJet);
 
-            rigid.AddForce(transform.up * thrustForce, ForceMode.Impulse);
+            rigid.AddForce(transform.up * boostForce, ForceMode.Impulse);
 
             isBoost = true;
             PlayEffect(isBoost);
