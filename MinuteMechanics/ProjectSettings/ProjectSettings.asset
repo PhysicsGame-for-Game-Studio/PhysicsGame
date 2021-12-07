@@ -695,8 +695,11 @@ PlayerSettings:
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     Standalone: AMPLIFY_SHADER_EDITOR
 =======
+=======
+>>>>>>> Stashed changes
     Android: UNITY_POST_PROCESSING_STACK_V2;OBI_ONI_SUPPORTED
     CloudRendering: UNITY_POST_PROCESSING_STACK_V2
     GameCoreXboxOne: UNITY_POST_PROCESSING_STACK_V2
@@ -711,6 +714,9 @@ PlayerSettings:
     XboxOne: UNITY_POST_PROCESSING_STACK_V2
     iPhone: OBI_ONI_SUPPORTED
     tvOS: UNITY_POST_PROCESSING_STACK_V2
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   additionalCompilerArguments: {}
   platformArchitecture: {}
