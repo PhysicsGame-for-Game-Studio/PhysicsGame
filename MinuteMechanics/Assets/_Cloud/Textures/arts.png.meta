@@ -8,6 +8,12 @@ TextureImporter:
   - first:
       213: -7443739011527844707
     second: portrait_cloud
+  - first:
+      213: 1502357738061095546
+    second: Fire Icon
+  - first:
+      213: -8703210180761885444
+    second: Water Icon
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -105,7 +111,7 @@ TextureImporter:
         width: 148
         height: 99
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -126,7 +132,7 @@ TextureImporter:
         width: 531
         height: 387
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,6 +140,48 @@ TextureImporter:
       bones: []
       spriteID: d9c5a21cec682b890800000000000000
       internalID: -7443739011527844707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Icon
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 1007
+        width: 101
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a72e0b6276279d410800000000000000
+      internalID: 1502357738061095546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water Icon
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 1010
+        width: 78
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf4ef12c37cf73780800000000000000
+      internalID: -8703210180761885444
       vertices: []
       indices: 
       edges: []
