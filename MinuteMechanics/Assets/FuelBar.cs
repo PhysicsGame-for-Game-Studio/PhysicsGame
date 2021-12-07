@@ -11,6 +11,7 @@ public class FuelBar : MonoBehaviour
     public TMP_Text fuelText;
     public Image fuelBar;
     public Image[] fuelPoints;
+    public Image fuelBarOutline;
     public bool[] PointsShow;
 
     [SerializeField]
@@ -45,6 +46,11 @@ public class FuelBar : MonoBehaviour
             fuelPoints[i].enabled = !DisplayFuelPoint(curFuel, i);
             PointsShow[i] = !DisplayFuelPoint(curFuel, i);
         }
+
+        if(fuelPoints[3].enabled == false)
+        {
+            ShowWarning();
+        }
     }
 
     void ColorChanger()
@@ -55,6 +61,12 @@ public class FuelBar : MonoBehaviour
     bool DisplayFuelPoint(float _fuel, int pointNum)
     {
         return ((pointNum * 10) >= _fuel);
+    }
+
+    public void ShowWarning()
+    {
+        Animator warningAnimator = fuelBarOutline.gameObject.GetComponent<Animator>();
+        warningAnimator.SetTrigger("Warning");
     }
 
 }

@@ -33,6 +33,14 @@ public class @PhysicsGameControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""TurnAround"",
+                    ""type"": ""Button"",
+                    ""id"": ""f3999044-73fd-4b2c-ae08-d9f329bd5783"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -57,6 +65,17 @@ public class @PhysicsGameControls : IInputActionCollection, IDisposable
                     ""action"": ""CamRotate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3826b201-8b43-4fa4-8216-1a88a51cdbc3"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PS4 Controller"",
+                    ""action"": ""TurnAround"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -79,6 +98,7 @@ public class @PhysicsGameControls : IInputActionCollection, IDisposable
         m_PlayerMovement = asset.FindActionMap("PlayerMovement", throwIfNotFound: true);
         m_PlayerMovement_Pitch = m_PlayerMovement.FindAction("Pitch", throwIfNotFound: true);
         m_PlayerMovement_CamRotate = m_PlayerMovement.FindAction("CamRotate", throwIfNotFound: true);
+        m_PlayerMovement_TurnAround = m_PlayerMovement.FindAction("TurnAround", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -130,12 +150,14 @@ public class @PhysicsGameControls : IInputActionCollection, IDisposable
     private IPlayerMovementActions m_PlayerMovementActionsCallbackInterface;
     private readonly InputAction m_PlayerMovement_Pitch;
     private readonly InputAction m_PlayerMovement_CamRotate;
+    private readonly InputAction m_PlayerMovement_TurnAround;
     public struct PlayerMovementActions
     {
         private @PhysicsGameControls m_Wrapper;
         public PlayerMovementActions(@PhysicsGameControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Pitch => m_Wrapper.m_PlayerMovement_Pitch;
         public InputAction @CamRotate => m_Wrapper.m_PlayerMovement_CamRotate;
+        public InputAction @TurnAround => m_Wrapper.m_PlayerMovement_TurnAround;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMovement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -151,6 +173,9 @@ public class @PhysicsGameControls : IInputActionCollection, IDisposable
                 @CamRotate.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnCamRotate;
                 @CamRotate.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnCamRotate;
                 @CamRotate.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnCamRotate;
+                @TurnAround.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnTurnAround;
+                @TurnAround.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnTurnAround;
+                @TurnAround.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnTurnAround;
             }
             m_Wrapper.m_PlayerMovementActionsCallbackInterface = instance;
             if (instance != null)
@@ -161,6 +186,9 @@ public class @PhysicsGameControls : IInputActionCollection, IDisposable
                 @CamRotate.started += instance.OnCamRotate;
                 @CamRotate.performed += instance.OnCamRotate;
                 @CamRotate.canceled += instance.OnCamRotate;
+                @TurnAround.started += instance.OnTurnAround;
+                @TurnAround.performed += instance.OnTurnAround;
+                @TurnAround.canceled += instance.OnTurnAround;
             }
         }
     }
@@ -178,5 +206,6 @@ public class @PhysicsGameControls : IInputActionCollection, IDisposable
     {
         void OnPitch(InputAction.CallbackContext context);
         void OnCamRotate(InputAction.CallbackContext context);
+        void OnTurnAround(InputAction.CallbackContext context);
     }
 }

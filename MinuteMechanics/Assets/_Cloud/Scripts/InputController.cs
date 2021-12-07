@@ -38,6 +38,7 @@ public class InputController : MonoBehaviour
             // Press circle button to reset rotation
             if (controller.buttonEast.isPressed)
             {
+                // to do
                 m_transform.rotation = Quaternion.identity;
             }
             m_transform.rotation *= DS4.getXYZRotation(m_Sansitivity * Time.deltaTime);
