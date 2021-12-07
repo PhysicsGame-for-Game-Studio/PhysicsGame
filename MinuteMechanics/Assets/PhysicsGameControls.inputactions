@@ -20,6 +20,14 @@
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "TurnAround",
+                    "type": "Button",
+                    "id": "f3999044-73fd-4b2c-ae08-d9f329bd5783",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -42,6 +50,17 @@
                     "processors": "",
                     "groups": "PS4 Controller",
                     "action": "CamRotate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3826b201-8b43-4fa4-8216-1a88a51cdbc3",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PS4 Controller",
+                    "action": "TurnAround",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

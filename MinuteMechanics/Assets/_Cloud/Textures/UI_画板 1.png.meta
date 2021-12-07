@@ -54,7 +54,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -341,17 +340,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Fuel Bar Bg: -750676649486771822
-      FP2: -3470530197055162058
-      Minimap Mask: 1892341040310383686
-      "UI_\u753B\u677F 1_7": 6503966130309372984
-      FP3: -226281315274956251
-      FP1: -6982946812354012590
-      FP0: -4509287998874765762
-      water volume: 687143440452999561
-      Fuel Bar Outline: -8822381639837921585
-      ButtonOutline: 2310427508539463918
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
