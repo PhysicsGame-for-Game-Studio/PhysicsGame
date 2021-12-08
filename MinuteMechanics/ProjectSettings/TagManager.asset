@@ -9,6 +9,8 @@ TagManager:
   - Rain
   - Roof
   - PlayerEyes
+  - Env
+  - Veh
   layers:
   - Default
   - TransparentFX
