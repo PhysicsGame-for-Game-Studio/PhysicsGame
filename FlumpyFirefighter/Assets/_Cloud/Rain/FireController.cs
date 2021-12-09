@@ -70,6 +70,7 @@ public class FireController : MonoBehaviour
         if (smokeTime <= 0)
         {
             smokeTime = 0;
+            GameManager.m_Instance.AddHistoryFire();
             Destroy(gameObject);
         }
     }
@@ -81,6 +82,7 @@ public class FireController : MonoBehaviour
         if (other.CompareTag("Rain") && size > 0)
         {
             Debug.Log("Rain hit fire");
+            GameManager.m_Instance.PutOutFire();
             //var em = fire.emission;
             //rate -= .1f;
             //em.rateOverTime = rate;

@@ -19,8 +19,9 @@ public class Jetpack : MonoBehaviour
     public float boostForce;
     public Rigidbody rigid; // player rigid
     public Transform groundedTransform;
-    public ParticleSystem effect;
-    public ParticleSystem effectBoost;
+    public ParticleSystem[] effect;
+    public ParticleSystem[] effectBoost;
+    public ParticleSystem waterDrop;
 
     private bool isGrounded = false;
     Vector3 m_NewForce;
@@ -44,20 +45,27 @@ public class Jetpack : MonoBehaviour
 
     public void PlayEffect(bool boostMode = false)
     {
+        waterDrop.Play();
         if (boostMode)
         {
-            effectBoost.Play();
+            
+            for (int i=0;i< effectBoost.Length;i++)
+                effectBoost[i].Play();
         }
         else
         {
-            effect.Play();
+            for (int i = 0; i < effect.Length; i++)
+                effect[i].Play();
         }
     }
 
     public void StopEffect()
     {
-        effectBoost.Stop();
-        effect.Stop();
+        waterDrop.Stop();
+        for (int i = 0; i < effectBoost.Length; i++)
+            effectBoost[i].Stop();
+        for (int i = 0; i < effect.Length; i++)
+            effect[i].Stop();
         //Debug.Log("effect stop.");
     }
 
@@ -79,7 +87,7 @@ public class Jetpack : MonoBehaviour
 
             isBoost = false;
             PlayEffect(isBoost);
-             Debug.Log("UP: " + transform.up);
+            Debug.Log("UP: " + transform.up);
         }
         else if (gamepad.rightTrigger.wasPressedThisFrame)
         {

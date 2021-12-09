@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 
         if (curFuel > maxFuel) curFuel = maxFuel;
         if (curFuel < 0) curFuel = 0;
-        UIManager.m_Instance.UpdateData();
+        UIManager.m_Instance.UpdateUIData();
     }
      
     public void ConsumingFuel(float amount)
@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
 
     public void RefillFuel(float amount)
     {
+        UIManager.m_Instance.TriggerWaterPopup();
         if (curFuel < maxFuel)
         {
             curFuel += amount;
@@ -71,6 +72,13 @@ public class GameManager : MonoBehaviour
 
     public void PutOutFire()
     {
+        
+        UIManager.m_Instance.TriggerFirePopup();
+    }
+
+    public void AddHistoryFire()
+    {
         firePutOut++;
+        UIManager.m_Instance.UpdateUIData();
     }
 }

@@ -47,13 +47,13 @@ public class InputController : MonoBehaviour
             if (controller.buttonEast.isPressed)
             {
                 // to do
-                float rot_x, rot_y, rot_z;
-                rot_x = this.transform.rotation.eulerAngles.x;
-                rot_y = m_MainCam.transform.rotation.eulerAngles.y;
-                rot_z = this.transform.rotation.eulerAngles.z;
-                m_transform.rotation = Quaternion.identity;
+                //float rot_x, rot_y, rot_z;
+                //rot_x = this.transform.rotation.eulerAngles.x;
+                //rot_y = m_MainCam.transform.rotation.eulerAngles.y;
+                //rot_z = this.transform.rotation.eulerAngles.z;
+                //m_transform.rotation = Quaternion.identity;
 
-
+                m_transform.rotation = m_MainCam.gameObject.transform.rotation;
 
             }
             m_transform.rotation *= DS4.getXYZRotation(m_Sansitivity * Time.deltaTime);
