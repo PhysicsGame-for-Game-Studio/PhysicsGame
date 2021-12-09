@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 {
   "dependencies": {
     "com.unity.2d.animation": {
@@ -476,3 +477,6 @@
     }
   }
 }
+=======
+{}
+>>>>>>> Stashed changes
