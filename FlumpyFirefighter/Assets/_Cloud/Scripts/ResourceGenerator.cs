@@ -67,7 +67,7 @@ public class ResourceGenerator : MonoBehaviour
 
     private void Update()
     {
-        if (currentFire < totalWater - 5)
+        if (currentFire < totalFire - 5)
         {
             SpawnFire(1);
         }

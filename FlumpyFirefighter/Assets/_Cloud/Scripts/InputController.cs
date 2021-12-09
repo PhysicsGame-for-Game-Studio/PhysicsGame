@@ -13,11 +13,15 @@ public class InputController : MonoBehaviour
     GameObject playerDecal;
     public bool decalOn;
 
+    public AudioClip[] auds;
+    AudioSource a;
+
     private void Awake()
     {
         m_Instance = this;
         this.controller = DS4.getConroller();
         m_transform = this.transform;
+        a = GetComponent<AudioSource>();
     }
     void Start()
     {
@@ -58,13 +62,20 @@ public class InputController : MonoBehaviour
             }
             m_transform.rotation *= DS4.getXYZRotation(m_Sansitivity * Time.deltaTime);
 
+
             // Test button pressed
-            if (Gamepad.current.aButton.wasPressedThisFrame)
+            if (Gamepad.current.rightTrigger.wasPressedThisFrame)
             {
-                Debug.Log("A button was pressed");
+                a.PlayOneShot(auds[0]);
+            }else if (Gamepad.current.rightShoulder.wasPressedThisFrame)
+            {
+                a.PlayOneShot(auds[1]);
             }
 
-
+            if (Gamepad.current.leftTrigger.wasPressedThisFrame)
+            {
+                GameManager.m_Instance.firePutOut += 15;
+            }
             ProjectDecal();
             if (Gamepad.current.squareButton.wasPressedThisFrame)
             {
