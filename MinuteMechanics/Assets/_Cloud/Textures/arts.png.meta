@@ -14,6 +14,12 @@ TextureImporter:
   - first:
       213: -8703210180761885444
     second: Water Icon
+  - first:
+      213: 8644048895900725
+    second: fire_icon_stroke
+  - first:
+      213: -2555116417975105745
+    second: water_icon_stroke
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -153,7 +159,7 @@ TextureImporter:
         width: 101
         height: 137
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -174,7 +180,7 @@ TextureImporter:
         width: 78
         height: 125
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -182,6 +188,48 @@ TextureImporter:
       bones: []
       spriteID: cf4ef12c37cf73780800000000000000
       internalID: -8703210180761885444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_icon_stroke
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 834
+        width: 100
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53c7cd777b5be1000800000000000000
+      internalID: 8644048895900725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_icon_stroke
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 836
+        width: 76
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2743dac7276a8cd0800000000000000
+      internalID: -2555116417975105745
       vertices: []
       indices: 
       edges: []

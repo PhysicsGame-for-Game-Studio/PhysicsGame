@@ -32,6 +32,12 @@ TextureImporter:
   - first:
       213: -750676649486771822
     second: Fuel Bar Bg
+  - first:
+      213: -137821233764646903
+    second: Arrow
+  - first:
+      213: -9122646869515863588
+    second: Minimap Stroke
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -318,7 +324,7 @@ TextureImporter:
         width: 2046
         height: 298
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -326,6 +332,48 @@ TextureImporter:
       bones: []
       spriteID: 2991926809f0595f0800000000000000
       internalID: -750676649486771822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arrow
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 494
+        width: 222
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 900c3fe615c561ef0800000000000000
+      internalID: -137821233764646903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minimap Stroke
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 867
+        width: 567
+        height: 566
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd97d2b8109d56180800000000000000
+      internalID: -9122646869515863588
       vertices: []
       indices: 
       edges: []

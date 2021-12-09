@@ -17,10 +17,16 @@ public class FireController : MonoBehaviour
     //灭火后烟过多久消失
     float smokeTime = 8;
 
+    public GameObject ground;
+    public GameObject resourcebox;
 
     // Start is called before the first frame update
     void Start()
     {
+        ground = GameObject.Find("PaintableGround");
+        resourcebox = GameObject.Find("ResourceCenter");
+        Physics.IgnoreCollision(ground.GetComponent<Collider>(), GetComponent<Collider>());
+        Physics.IgnoreCollision(resourcebox.GetComponent<Collider>(), GetComponent<Collider>());
         fire = transform.GetChild(0).GetComponent<ParticleSystem>();
         smoke = transform.GetChild(0).GetChild(0).GetComponent<ParticleSystem>();
         smokeAfter = transform.GetChild(1).GetComponent<ParticleSystem>();
@@ -69,11 +75,13 @@ public class FireController : MonoBehaviour
         }
     }
 
+    // 触发着火
     private void OnTriggerStay(Collider other)
     {
-        //Debug.Log("entered");
+        Debug.Log("Fire Detected with "+ other.name);
         if (other.CompareTag("Rain") && size > 0)
         {
+            Debug.Log("Rain hit fire");
             //var em = fire.emission;
             //rate -= .1f;
             //em.rateOverTime = rate;

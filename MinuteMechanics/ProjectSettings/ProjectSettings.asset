@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: PHYG
   productName: 5MinuteMechanics
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -146,7 +146,8 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 0.1
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 11400000, guid: c21c97238d2ef0d4c9c817372312789a, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -164,7 +165,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.DefaultCompany.5MinuteMechanics
+    Standalone: com.PHYG.5MinuteMechanics
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -721,11 +722,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 1
-  cloudProjectId: 43f2d8f5-b51e-4fcf-ae60-584e729b7d15
+  cloudProjectId: de560e66-a6e9-423a-b437-e48fa4651610
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 5MinuteMechanics
-  organizationId: bimzydev
+  projectName: 5MinuteMechanics (1)
+  organizationId: light_lingo
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   virtualTexturingSupportEnabled: 0

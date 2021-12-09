@@ -24,7 +24,10 @@ public class PaintManager : Singleton<PaintManager>{
 
     public override void Awake(){
         base.Awake();
-        
+
+        texturePaint = Shader.Find("TNTC/TexturePainter");
+        extendIslands = Shader.Find("TNTC/ExtendIslands");
+
         paintMaterial = new Material(texturePaint);
         extendMaterial = new Material(extendIslands);
         command = new CommandBuffer();

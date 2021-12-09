@@ -8,6 +8,7 @@ public class InputController : MonoBehaviour
     public Gamepad controller = null;
     private Transform m_transform;
     public float m_Sansitivity = 4000;
+    public Camera m_MainCam;
 
     private void Awake()
     {
@@ -40,6 +41,9 @@ public class InputController : MonoBehaviour
             {
                 // to do
                 m_transform.rotation = Quaternion.identity;
+
+
+
             }
             m_transform.rotation *= DS4.getXYZRotation(m_Sansitivity * Time.deltaTime);
 
