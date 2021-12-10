@@ -11,7 +11,7 @@ At the end
 
 you decided to end this job.
 
-
+[Download here](https://arissss.itch.io/flumpy-firefighter).
 
 ## Screenshots
 
