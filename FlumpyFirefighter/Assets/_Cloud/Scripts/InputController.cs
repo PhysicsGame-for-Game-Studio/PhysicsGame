@@ -74,7 +74,7 @@ public class InputController : MonoBehaviour
 
             if (Gamepad.current.leftTrigger.wasPressedThisFrame)
             {
-                GameManager.m_Instance.firePutOut += 15;
+                //GameManager.m_Instance.firePutOut += 15;
             }
             ProjectDecal();
             if (Gamepad.current.squareButton.wasPressedThisFrame)

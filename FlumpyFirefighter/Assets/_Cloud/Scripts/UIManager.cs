@@ -10,6 +10,8 @@ public class UIManager : MonoBehaviour
     public TMP_Text fireText;
     public GameObject Fire_Pop;
     public GameObject Water_Pop;
+    public GameObject fireIcon;
+
     private void Awake()
     {
         m_Instance = this;
@@ -38,4 +40,8 @@ public class UIManager : MonoBehaviour
         Water_Pop.GetComponent<Animator>().SetTrigger("pop");
     }
 
+    public void HighlightFire()
+    {
+        fireIcon.GetComponent<Animator>().SetTrigger("putting");
+    }
 }

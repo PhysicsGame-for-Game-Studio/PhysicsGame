@@ -58,7 +58,7 @@ public class @PhysicsGameControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""43d0ef27-10d8-4ba6-88f3-32934e8ab9d6"",
-                    ""path"": ""<Gamepad>/rightStick"",
+                    ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""PS4 Controller"",

@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     bool ended;
     bool played;
     public GameObject endings;
+    float t;
 
     private void Awake()
     {
@@ -40,34 +41,10 @@ public class GameManager : MonoBehaviour
         a = GetComponent<AudioSource>();
     }
 
-    private void Update()
-    {
-        if (!ended)
-        {
-            if (firePutOut >= 15)
-            {
-                ended = true;
-            }
-        }
-        else
-        {
-            //if (!a.isPlaying)
-            // {
-            if (!played)
-            {
-                a.clip = clip;
-                a.Play();
-                a.volume = .8f;
-                played = true;
-                endings.SetActive(true);
-            }
-                
-           // }
-        }
-        
-    }
+  
+    
 
-    void Reload()
+    public void Reload()
     {
         SceneManager.LoadScene(0);
     }
@@ -115,13 +92,17 @@ public class GameManager : MonoBehaviour
 
     public void PutOutFire()
     {
-        
-        UIManager.m_Instance.TriggerFirePopup();
+        // highlight fire icon
+
+        //UIManager.m_Instance.TriggerFirePopup();
+        UIManager.m_Instance.HighlightFire();
     }
 
     public void AddHistoryFire()
     {
         firePutOut++;
+        Debug.Log("ggiigefasdf");
+        UIManager.m_Instance.TriggerFirePopup();
         UIManager.m_Instance.UpdateUIData();
     }
 }
