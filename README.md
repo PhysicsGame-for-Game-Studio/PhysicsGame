@@ -15,8 +15,9 @@ you decided to end this job.
 
 ## Screenshots
 
-![2021-12-10](E:\Github\SchoolWork\PhysicsGame\Screenshots\2021-12-10.png)
+![](E:\Github\SchoolWork\PhysicsGame\Screenshots\2021-12-10.png)
 
-![2021-12-08 (13)](E:\Github\SchoolWork\PhysicsGame\Screenshots\2021-12-08 (13).png)
+![](E:\Github\SchoolWork\PhysicsGame\Screenshots\2021-12-08 (14).png)
 
-![2021-12-08 (14)](E:\Github\SchoolWork\PhysicsGame\Screenshots\2021-12-08 (14).png)
+![](E:\Github\SchoolWork\PhysicsGame\Screenshots\2021-12-08 (13).png)
+
