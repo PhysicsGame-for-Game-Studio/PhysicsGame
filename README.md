@@ -27,7 +27,7 @@ Put out fire
 
 
 
-Enjoy the city view
+Enjoy the city view (or not)
 
 ![](./Screenshots/2021-12-08 (13).png)
 
