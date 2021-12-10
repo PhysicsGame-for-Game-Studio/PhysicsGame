@@ -15,15 +15,15 @@ you decided to end this job.
 
 ## Screenshots
 
-![](Screenshots\2021-12-10.png)
+![](.\Screenshots\2021-12-10.png)
 
 
 
-![](Screenshots\2021-12-08 (14).png)
+![](.\Screenshots\2021-12-08 (14).png)
 
 
 
-![](Screenshots\2021-12-08 (13).png)
+![](.\Screenshots\2021-12-08 (13).png)
 
 
 
